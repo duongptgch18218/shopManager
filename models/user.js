@@ -11,6 +11,8 @@ const userSchema = new Schema({
     type: String,
     required: true
   },
+  resetToken:String,
+  resetTokenExpiration: Date,
   cart: {
     items: [
       {
@@ -22,7 +24,7 @@ const userSchema = new Schema({
         quantity: { type: Number, required: true }
       }
     ]
-  }
+  },
 });
 
 userSchema.methods.addToCart = function(product) {

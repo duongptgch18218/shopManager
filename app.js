@@ -29,6 +29,7 @@ app.set('views', 'views');
 const adminRoutes = require('./routes/admin');
 const shopRoutes = require('./routes/shop');
 const authRoutes = require('./routes/auth');
+const logStore = require('./midleware/log')
 
 app.use(cors())
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -44,20 +45,7 @@ app.use(
 app.use(csrfProtection);
 app.use(flash());
 
-app.use((req, res, next) => {
-  const rawHeader = req.headers
-  console.log(res.statusCode)
-  // console.log(req.ip)
-  // console.log(req._parsedOriginalUrl)
-  const from = rawHeader.referer
-  // console.log(from)
-  console.log(req)
-  const protocol = req.protocol
-  const to = protocol + "://" + rawHeader.host + req.url;
-  // console.log(to)
-  const brower = rawHeader.connection
-  next();
-})
+// app.use(logStore);
 
 app.use((req, res, next) => {
   if (!req.session.user) {

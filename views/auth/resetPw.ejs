@@ -1,0 +1,28 @@
+<%- include('../includes/head.ejs') %>
+    <link rel="stylesheet" href="/css/forms.css">
+    <link rel="stylesheet" href="/css/auth.css">
+</head>
+
+<body>
+   <%- include('../includes/navigation.ejs') %>
+
+    <main>
+        <% if (errorMessage) { %>
+            <div class="user-message user-message--error"><%= errorMessage %></div>
+        <% } %>
+        <form class="login-form" action="/reset" method="POST">
+            <div class="form-control">
+                <label for="email">New Password</label>
+                <input type="password" name="password" id="email">
+            </div>
+            <div class="form-control">
+                <label for="email">Confirm password</label>
+                <input type="password" name="confirmPassword" id="email">
+            </div>
+            <input type="hidden" name="token" value="<%= token %>">
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+            <input type="hidden" name="userid" value="<%= userid %>">
+            <button class="btn" type="submit">Update Password</button>
+        </form>
+    </main>
+<%- include('../includes/end.ejs') %>

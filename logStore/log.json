@@ -1,0 +1,16 @@
+{
+    "data": [
+        {
+            "Time": "2020-7-18 22:51:6",
+            "IP": "::1",
+            "Request": "http://localhost:3000/signup",
+            "status": 200,
+            "browse": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36"
+        },
+        {
+            "Time": "2020-7-18 22:51:11",
+            "IP": "::1",
+            "Request": "http://localhost:3000/signup",
+            "status": 200,
+            "browse": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36"
+        },
